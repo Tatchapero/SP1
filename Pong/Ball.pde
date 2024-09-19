@@ -17,7 +17,7 @@ class Ball {
     ballSpeedX = -15;
     ballSpeedY = (int)random(-10, 10);
     ballMinSpeed = -10;
-    ballMaxSpeed = -15;
+    ballMaxSpeed = -10;
     pos = new Point[10];
 
     for (int i = 0; i < pos.length; i++) {
@@ -26,8 +26,10 @@ class Ball {
   }
 
   public void display() {
-    update();
-    
+    move();
+    bounce();
+    trailingEffect();
+        
     for (int i = 0; i < pos.length; i++) {
       fill(ballColor, 255 * i/pos.length);
       noStroke(); 
@@ -100,7 +102,7 @@ class Ball {
     return ballYPosition;
   }
 
-  void update() {
+  void trailingEffect() {
     // Shift array values
     for (int i = 0; i < pos.length-1; i++) {
       pos[i].x = pos[i+1].x;

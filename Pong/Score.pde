@@ -226,18 +226,11 @@ class Score {
   }
 
   void matchPoint() {
-    if (playerScore == matchPoint) {
+    if (playerScore == matchPoint || cpuScore == matchPoint) {
       delay(5000);
-      resetScore();
-    } else if (cpuScore == matchPoint) {
-      delay(5000);
-      resetScore();
+      playerScore = 0;
+      cpuScore = 0;
     }
-  }
-
-  void resetScore() {
-    playerScore = 0;
-    cpuScore = 0;
   }
   
   int playerScore () {

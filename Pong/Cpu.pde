@@ -8,7 +8,7 @@ class Cpu extends Player {
     playerYPosition = height/2;
     playerWidth = width/250;
     playerHeight = height/20;
-    cpuSpeed = 5;
+    cpuSpeed = 4;
   }
   
   void playerControls(int ballYPosition) {
@@ -23,6 +23,7 @@ class Cpu extends Player {
   }
   
   void addCpuSpeed(int speed) {
-    cpuSpeed = 5 + speed;
+    int baseCpuSpeed = cpuSpeed;
+    cpuSpeed = baseCpuSpeed + speed;
   }
 }

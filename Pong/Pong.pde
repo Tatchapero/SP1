@@ -20,16 +20,18 @@ void setup() {
 
 void draw() {  
   field.display();
+  
   player.display();
   player.playerControls();
+  
   cpu.display();
   cpu.playerControls(ball.positionY());
   cpu.addCpuSpeed(scoreboard.playerScore()/2);
+  
   ball.display();
-  ball.move();
-  ball.bounce();
   ball.checkPlayerCollision(player);
   ball.checkPlayerCollision(cpu);  
+  
   scoreboard.display();
   scoreboard.updateScore(ball);
 }
